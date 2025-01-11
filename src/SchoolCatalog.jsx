@@ -65,8 +65,11 @@ export default function SchoolCatalog() {
   // pagination
   const PAGE_SIZE = 3;
   const [page, setPage] = useState(1);
-  const currentPage = courses.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
-  const hasMore = courses.length > page * PAGE_SIZE;
+  const currentPage = sortedCourses.slice(
+    (page - 1) * PAGE_SIZE,
+    page * PAGE_SIZE
+  );
+  const hasMore = sortedCourses.length > page * PAGE_SIZE;
   const hasLess = page > 1;
 
   return (
