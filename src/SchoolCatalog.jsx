@@ -18,8 +18,49 @@ export default function SchoolCatalog() {
   );
 
   // sorting
-  const [sortDirection, setSortDirection]
-  const [sortColumn, setSortColumn]
+  const [sortColumn, setSortColumn] = useState(null);
+  const [sortDirection, setSortDirection] = useState("asc");
+  const handleSortingChange = (column) => {
+    const sortOrder =
+      sortColumn === column && sortDirection === "asc" ? "desc" : "asc";
+    setSortColumn(column);
+    setSortDirection(sortOrder);
+  };
+
+  const sortedCourses = [...filteredCourses].sort((a, b) => {
+    if (!sortColumn) return 0;
+    if (sortColumn === "trimester") {
+      return (
+        a.trimester.localeCompare(b.trimester) *
+        (sortDirection === "desc" ? -1 : 1)
+      );
+    }
+    if (sortColumn === "courseNumber") {
+      return (
+        a.courseNumber.localeCompare(b.courseNumber) *
+        (sortDirection === "desc" ? -1 : 1)
+      );
+    }
+    if (sortColumn === "courseName") {
+      return (
+        a.courseName.localeCompare(b.courseName) *
+        (sortDirection === "desc" ? -1 : 1)
+      );
+    }
+    if (sortColumn === "semesterCredits") {
+      return (
+        (a.semesterCredits - b.semesterCredits) *
+        (sortDirection === "desc" ? -1 : 1)
+      );
+    }
+    if (sortColumn === "totalClockHours") {
+      return (
+        (a.totalClockHours - b.totalClockHours) *
+        (sortDirection === "desc" ? -1 : 1)
+      );
+    }
+    return 0;
+  });
 
   return (
     <div className="school-catalog">
@@ -32,20 +73,24 @@ export default function SchoolCatalog() {
       <table>
         <thead>
           <tr>
-            <th onClick={() => handleSort("trimester")}>Trimester</th>
-            <th onClick={() => handleSort("courseNumber")}>Course Number</th>
-            <th onClick={() => handleSort("courseName")}>Courses Name</th>
-            <th onClick={() => handleSort("semesterCredits")}>
+            <th onClick={() => handleSortingChange("trimester")}>Trimester</th>
+            <th onClick={() => handleSortingChange("courseNumber")}>
+              Course Number
+            </th>
+            <th onClick={() => handleSortingChange("courseName")}>
+              Courses Name
+            </th>
+            <th onClick={() => handleSortingChange("semesterCredits")}>
               Semester Credits
             </th>
-            <th onClick={() => handleSort("totalClockHours")}>
+            <th onClick={() => handleSortingChange("totalClockHours")}>
               Total Clock Hours
             </th>
             <th>Enroll</th>
           </tr>
         </thead>
         <tbody>
-          {filteredCourses.map((course) => (
+          {sortedCourses.map((course) => (
             <tr key={course.courseNumber}>
               <td>{course.trimester}</td>
               <td>{course.courseNumber}</td>
