@@ -35,7 +35,7 @@ export default function SchoolCatalog() {
           </tr>
         </thead>
         <tbody>
-          {courses.map((course) => (
+          {filteredCourses.map((course) => (
             <tr key={course.courseNumber}>
               <td>{course.trimester}</td>
               <td>{course.courseNumber}</td>
