@@ -5,8 +5,15 @@ export default function SchoolCatalog() {
   useEffect(() => {
     fetch("/api/courses.json")
       .then((response) => response.json())
-      .then((data) => setCourses(data.message));
+      .then((data) => setCourses(data));
   }, []);
+
+  const [filter, setFilter] = useState("");
+  const filteredCourses = courses.filter(
+    (course) =>
+      course.courseNumber.toLowerCase().startsWith(filter.toLowerCase()) ||
+      course.courseName.toLowerCase().startsWith(filter.toLowerCase())
+  );
 
   return (
     <div className="school-catalog">
