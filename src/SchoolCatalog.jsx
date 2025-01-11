@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 export default function SchoolCatalog() {
   const [courses, setCourses] = useState([]);
   useEffect(() => {
-    fetch("../public/api/courses.json")
+    fetch("/api/courses.json")
       .then((response) => response.json())
       .then((data) => setCourses(data.message));
   }, []);
