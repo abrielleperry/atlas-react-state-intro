@@ -26,11 +26,15 @@ export default function SchoolCatalog() {
       <table>
         <thead>
           <tr>
-            <th>Trimester</th>
-            <th>Course Number</th>
-            <th>Courses Name</th>
-            <th>Semester Credits</th>
-            <th>Total Clock Hours</th>
+            <th onClick={() => handleSort("trimester")}>Trimester</th>
+            <th onClick={() => handleSort("courseNumber")}>Course Number</th>
+            <th onClick={() => handleSort("courseName")}>Courses Name</th>
+            <th onClick={() => handleSort("semesterCredits")}>
+              Semester Credits
+            </th>
+            <th onClick={() => handleSort("totalClockHours")}>
+              Total Clock Hours
+            </th>
             <th>Enroll</th>
           </tr>
         </thead>
