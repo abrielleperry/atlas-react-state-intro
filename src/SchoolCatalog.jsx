@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 export default function SchoolCatalog() {
+  // fetching json
   const [courses, setCourses] = useState([]);
   useEffect(() => {
     fetch("/api/courses.json")
@@ -8,12 +9,17 @@ export default function SchoolCatalog() {
       .then((data) => setCourses(data));
   }, []);
 
+  // filtering
   const [filter, setFilter] = useState("");
   const filteredCourses = courses.filter(
     (course) =>
       course.courseNumber.toLowerCase().startsWith(filter.toLowerCase()) ||
       course.courseName.toLowerCase().startsWith(filter.toLowerCase())
   );
+
+  // sorting
+  const [sortDirection, setSortDirection]
+  const [sortColumn, setSortColumn]
 
   return (
     <div className="school-catalog">
