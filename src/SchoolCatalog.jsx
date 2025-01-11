@@ -63,6 +63,7 @@ export default function SchoolCatalog() {
   });
 
   // pagination
+  const PAGE_SIZE = 3;
   const [page, setPage] = useState(1);
   const currentPage = courses.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
   const hasMore = courses.length > page * PAGE_SIZE;
@@ -96,7 +97,7 @@ export default function SchoolCatalog() {
           </tr>
         </thead>
         <tbody>
-          {sortedCourses.map((course) => (
+          {currentPage.map((course) => (
             <tr key={course.courseNumber}>
               <td>{course.trimester}</td>
               <td>{course.courseNumber}</td>
