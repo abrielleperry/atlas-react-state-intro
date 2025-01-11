@@ -62,6 +62,10 @@ export default function SchoolCatalog() {
     return 0;
   });
 
+  // pagination
+  const [page, setPage] = useState(1);
+  const currentPage = courses.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+
   return (
     <div className="school-catalog">
       <h1>School Catalog</h1>
@@ -105,8 +109,8 @@ export default function SchoolCatalog() {
         </tbody>
       </table>
       <div className="pagination">
-        <button>Previous</button>
-        <button>Next</button>
+        <button onClick={() => setPage(page - 1)}>Previous</button>
+        <button onClick={() => setPage(page + 1)}>Next</button>
       </div>
     </div>
   );
