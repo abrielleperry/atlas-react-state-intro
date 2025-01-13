@@ -8,6 +8,12 @@ updateEnrolledCourses func updates state by creating new array by spreading prev
 dropCourse func removes a course from storeEnrolledCourses array by filtering out course based on courseNumber.
 CourseContext.Provider tag wraps child comps Header, SchoolCatalog, and ClassSchedule which makes
 - the state storeEnrolledCourses and funcs addCourse and dropCourse avilable to all child comps throguh CourseContext.
+
+
+CourseContext = context created by createContext
+storeEnrolledCourses = state managed using useState
+addCourse and dropCourse = funcs to update the state
+CourseContext.Provider = shares data w entire app
 */
 import SchoolCatalog from "./SchoolCatalog";
 import Header from "./Header";
