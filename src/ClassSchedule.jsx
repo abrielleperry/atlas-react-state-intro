@@ -17,6 +17,7 @@ export default function ClassSchedule() {
         <tbody>
           {storeEnrolledCourses.map((course) => (
             <tr key={course.courseNumber}>
+              <td>{course.courseNumber}</td>
               <td>{course.courseName}</td>
               <td>
                 <button onClick={() => dropCourse(course.courseNumber)}>
