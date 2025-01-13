@@ -14,7 +14,7 @@ import Header from "./Header";
 import ClassSchedule from "./ClassSchedule";
 import React, { createContext, useState } from "react";
 
-export const CourseContext = React.createContext();
+export const CourseContext = createContext();
 
 export default function App() {
   const [storeEnrolledCourses, updateEnrolledCourses] = useState([]);
