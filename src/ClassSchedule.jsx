@@ -18,11 +18,6 @@ export default function ClassSchedule() {
           {storeEnrolledCourses.map((course) => (
             <tr key={course.courseNumber}>
               <td>{course.courseName}</td>
-              <td>{course.trimester}</td>
-              <td>{course.courseNumber}</td>
-              <td>{course.courseName}</td>
-              <td>{course.semesterCredits}</td>
-              <td>{course.totalClockHours}</td>
               <td>
                 <button onClick={() => dropCourse(course.courseNumber)}>
                   Drop
