@@ -1,3 +1,6 @@
+import { useEffect, useState, useContext } from "react";
+import { CourseContext } from "./App";
+
 export default function ClassSchedule() {
   return (
     <div className="class-schedule">
