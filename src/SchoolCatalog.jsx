@@ -75,8 +75,7 @@ export default function SchoolCatalog() {
 
   // enroll
   const [storeEnrolledCourses, updateEnrolledCourses] = useState([]);
-  const { addCourse } = useContext(CourseContext)
-
+  const { addCourse } = useContext(CourseContext);
 
   return (
     <div className="school-catalog">
@@ -114,8 +113,7 @@ export default function SchoolCatalog() {
               <td>{course.semesterCredits}</td>
               <td>{course.totalClockHours}</td>
               <td>
-                <button onClick={}
-                >Enroll</button>
+                <button onClick={() => addCourse(course)}>Enroll</button>
               </td>
             </tr>
           ))}
