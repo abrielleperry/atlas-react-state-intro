@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { CourseContext } from "./App";
 
 export default function SchoolCatalog() {
   // fetching json
@@ -71,6 +72,8 @@ export default function SchoolCatalog() {
   );
   const hasMore = sortedCourses.length > page * PAGE_SIZE;
   const hasLess = page > 1;
+
+
 
   return (
     <div className="school-catalog">
