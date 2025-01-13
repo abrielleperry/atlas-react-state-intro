@@ -7,7 +7,9 @@ export default function Header() {
   return (
     <div className="header">
       <img src={logo} alt="logo" className="logo" />
-      <div className="enrollment">Classes Enrolled: {}</div>
+      <div className="enrollment">
+        Classes Enrolled: {storeEnrolledCourses.length}
+      </div>
     </div>
   );
 }
