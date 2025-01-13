@@ -108,7 +108,8 @@ export default function SchoolCatalog() {
               <td>{course.semesterCredits}</td>
               <td>{course.totalClockHours}</td>
               <td>
-                <button>Enroll</button>
+                <button onClick={}
+                >Enroll</button>
               </td>
             </tr>
           ))}
