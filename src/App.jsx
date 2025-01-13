@@ -6,7 +6,7 @@ useState returns func updateEnrolledCourses that updates state.
 addCourse func adds new course to storeEnrolledCourses array by using updateEnrolledCourses.
 updateEnrolledCourses func updates state by creating new array by spreading prev one and adding on new course to end of it.
 dropCourse func removes a course from storeEnrolledCourses array by filtering out course based on courseNumber.
-Context.Provider tag wraps child comps Header, SchoolCatalog, and ClassSchedule which makes
+CourseContext.Provider tag wraps child comps Header, SchoolCatalog, and ClassSchedule which makes
 - the state storeEnrolledCourses and funcs addCourse and dropCourse avilable to all child comps throguh CourseContext.
 */
 import SchoolCatalog from "./SchoolCatalog";
@@ -30,11 +30,13 @@ export default function App() {
 
   return (
     <div>
-      <Context.Provider value={{ storeEnrolledCourses, addCourse, dropCourse }}>
+      <CourseContext.Provider
+        value={{ storeEnrolledCourses, addCourse, dropCourse }}
+      >
         <Header />
         <SchoolCatalog />
         <ClassSchedule />
-      </Context.Provider>
+      </CourseContext.Provider>
     </div>
   );
 }
