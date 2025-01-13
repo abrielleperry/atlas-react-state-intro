@@ -6,9 +6,11 @@ import React from "react";
 export default function App() {
   return (
     <div>
-      <Header />
-      <SchoolCatalog />
-      <ClassSchedule />
+      <Context.Provider>
+        <Header />
+        <SchoolCatalog />
+        <ClassSchedule />
+      </Context.Provider>
     </div>
   );
 }
