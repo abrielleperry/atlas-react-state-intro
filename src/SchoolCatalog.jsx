@@ -73,7 +73,9 @@ export default function SchoolCatalog() {
   const hasMore = sortedCourses.length > page * PAGE_SIZE;
   const hasLess = page > 1;
 
-
+  // enroll/drop
+  const [storeEnrolledCourses, updateEnrolledCourses] = useState([]);
+  const { addCourse } = useContext(CourseContext)
 
   return (
     <div className="school-catalog">
