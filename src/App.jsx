@@ -4,7 +4,9 @@ im going to think of context like a shared box that stores info all component ha
 import SchoolCatalog from "./SchoolCatalog";
 import Header from "./Header";
 import ClassSchedule from "./ClassSchedule";
-import React from "react";
+import React, { createContext, useState } from "react";
+
+export const CourseContext = React.createContext();
 
 export default function App() {
   return (
