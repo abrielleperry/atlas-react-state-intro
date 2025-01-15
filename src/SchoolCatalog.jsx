@@ -64,7 +64,7 @@ export default function SchoolCatalog() {
   });
 
   // pagination
-  const PAGE_SIZE = 3;
+  const PAGE_SIZE = 5;
   const [page, setPage] = useState(1);
   const currentPage = sortedCourses.slice(
     (page - 1) * PAGE_SIZE,
