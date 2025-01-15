@@ -120,10 +120,10 @@ export default function SchoolCatalog() {
         </tbody>
       </table>
       <div className="pagination">
-        <button disabled={!hasLess} onClick={() => setPage(page - 1)}>
+        <button onClick={() => setPage(page - 1)} disabled={!hasLess}>
           Previous
         </button>
-        <button disabled={!hasMore} onClick={() => setPage(page + 1)}>
+        <button onClick={() => setPage(page + 1)} disabled={!hasMore}>
           Next
         </button>
       </div>
