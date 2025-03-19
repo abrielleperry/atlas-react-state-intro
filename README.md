@@ -145,7 +145,7 @@ atlas-react-state-intro/
 ## Deployment
 
 This project is deployed and accessible on Netlify:
-🔗 [[https://atlas-react-and-jsx-aperry.netlify.app](https://atlas-react-state-intro-aperry.netlify.app)]([https://atlas-react-and-jsx-aperry.netlify.app](https://atlas-react-state-intro-aperry.netlify.app))
+🔗 [https://atlas-react-and-jsx-aperry.netlify.app](https://atlas-react-state-intro-aperry.netlify.app)
 
 To deploy your own version:
 
